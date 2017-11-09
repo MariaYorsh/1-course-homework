@@ -1,4 +1,4 @@
-
+#include "stdafx.h"
 #include <iostream>
 
 using namespace std;
@@ -13,10 +13,8 @@ int main()
 	cout << "Enter integer number: " << endl;
 	cin >> number;
 	cout << "Enter simbol which do you want to find: " << endl;
-	cin >> t;
+	cin >> t >> endl;
 	cout << "Count of simbol in hex code is " << hexCount(number, t) << endl;
-
-	system("pause");
     return 0;
 }
 
