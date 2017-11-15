@@ -2,8 +2,8 @@
 
 using namespace std;
 
-int quantify(int array[], int N, int k);
-void bubleSort(int array[], int N);
+int Quantify(int array[], int N, int k);
+void BubleSort(int array[], int N);
 void Swap(int& a, int& b);
 void DisplayArray(int array[], int n);
 void GenerateRandomArray(int array[], int n);
@@ -17,13 +17,13 @@ int main()
 	cout << "Initial array: " << endl;
 	DisplayArray(array, N);
 	cout << endl;
-	bubleSort(array, N);
+	BubleSort(array, N);
 	cout << "Sorted array: " << endl;
 	DisplayArray(array, N);
 	cout << endl;
 	cout << "Enter number: " << endl;
 	cin >> k;
-	cout << quantify(array, N, k) << endl;
+	cout << Quantify(array, N, k) << endl;
 	system("pause");
 	return 0;
 }
@@ -52,7 +52,7 @@ void Swap(int& a, int& b)
 	b = t;
 }
 
-void bubleSort(int array[], int N)
+void BubleSort(int array[], int N)
 {
 	for (int i = 1; i < N; i++)
 	{
@@ -66,7 +66,7 @@ void bubleSort(int array[], int N)
 	}
 }
 
-int quantify(int array[], int N, int k)
+int Quantify(int array[], int N, int k)
 {
 	int t=0;
 	for (int i = 0; i < N; i++)
