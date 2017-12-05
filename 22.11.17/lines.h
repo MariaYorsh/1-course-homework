@@ -7,7 +7,7 @@ using namespace std;
 int getLength(char array[]);
 void toUpper(char array[]);
 bool isAlphabet(char ch);
-int findIndex(char *arr, char * find, int position);
+int findIndex(char arr[], char  find[], int position);
 void strCopy(char * source, char * destination, int from, int to);
 void strConCat(char * source, char * str1, int index);
 void strChangeBySymbol(char *source, char ch, int from, int to);
@@ -102,7 +102,7 @@ void strChangeBySymbol(char *source, char ch, int from, int to)
 void strReplace(char * source, char * str, char * replace)
 {
 	int k = getLength(replace);
-	int n = findIndex(source, str);
+	int n = findIndex(source, str, 0);
 	int l = getLength(str);
 	char result[N] = "";
 	while (n != -1)
