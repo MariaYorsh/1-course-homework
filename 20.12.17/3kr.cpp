@@ -8,19 +8,21 @@ void DisplayMatrix(int matrix[][N], int n, int m);
 void RandomMatrix(int matrix[][N], int n, int m, int k);
 void Swap(int& a, int& b);
 void GenerateMatrixDouble(int matrix[][N], int n, int m);
-void ReplaceNumbers(int matrix[][N], int n, int m);
+void ReplaceNumbers(int matrix[][N], int n, int m, int p);
 
 int main()
 {
 	int matrix[N][N] = { 0 };
-	int n, m;
+	int n, m, p;
 	cout << " Enter n and m, which n>m: " << endl;
 	cin >> n;
 	cin >> m;
 	GenerateMatrixDouble(matrix, n, m);
 	DisplayMatrix(matrix, n, m);
 	cout << endl;
-	ReplaceNumbers(matrix, n, m);
+	cout << " Enter number smaller, than m: " << endl;
+	cin >> p;
+	ReplaceNumbers(matrix, n, m, p);
 	DisplayMatrix(matrix, n, m);
 
 	system("pause");
@@ -67,7 +69,7 @@ void GenerateMatrixDouble(int matrix[][N], int n, int m)
 	{
 		for (int j = 0; j < n; j++)
 		{
-			matrix[i][j] = 1;
+			matrix[i][j] = i*10 + j;
 		}
 
 	}
@@ -76,18 +78,18 @@ void GenerateMatrixDouble(int matrix[][N], int n, int m)
 	{
 		for (int j = 0; j <= n - 1; j++)
 		{
-			matrix[i][j] = 2;
+			matrix[i][j] = 8;
 		}
 	}
 }
 
-void ReplaceNumbers(int matrix[][N], int n, int m)
+void ReplaceNumbers(int matrix[][N], int n, int m, int p)
 {
-	for (int i = 0; i < n / 2; i++)
+	for (int i = 0; i < p; i++)
 	{
-		for (int j = 0 ; j < m - 1; j++)
+		for (int j = m - p + i; j <=  m - 1; j++)
 		{
-			Swap(matrix[i][j + 1], matrix[n / 2 + i][j + i]);
+			Swap(matrix[i][j], matrix[n - i - 1][m - j - 1]);
 		}
 	}
 }
